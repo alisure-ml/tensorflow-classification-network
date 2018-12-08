@@ -135,7 +135,7 @@ class Data:
     @staticmethod
     def norm_image_label(images_list):
         images = [np.array(misc.imread(image_path).astype(np.float)) / 255.0 for image_path in images_list]
-        labels = [int(image_path.split("-")[1].split(".")[0]) for image_path in images_list]
+        labels = [int(image_path.split("-")[-1].split(".")[0]) for image_path in images_list]
         return images, labels
 
     pass
